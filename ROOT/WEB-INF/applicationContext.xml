@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"	
+	xmlns:task="http://www.springframework.org/schema/task"	
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task-4.0.xsd	
+	">
+
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+		<!-- 指定连接数据库的URL -->
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/book?useUnicode=true;serverTimezone=Asia/Shanghai;characterEncoding=utf-8;useSSL=false"/> <!-- 需要更改的地方1/7：此网站服务器如果运行在Linux操作系统上，不用更改；如果运行在Windows操作系统上，value里的那三个分号;都要替换为&amp; -->
+		<!-- 指定连接数据库的用户名 -->
+		<property name="user" value="root"/>
+		<!-- 指定连接数据库的密码 -->
+		<property name="password" value="pswd"/> <!-- 需要更改的地方2/7：value请改为自己的数据库登录密码 -->
+		<!-- 指定连接数据库连接池的最大连接数 -->
+		<property name="maxPoolSize" value="20"/>
+		<!-- 指定连接数据库连接池的最小连接数 -->
+		<property name="minPoolSize" value="1"/>
+		<!-- 指定连接数据库连接池的初始化连接数 -->
+		<property name="initialPoolSize" value="1"/>
+		<!-- 指定连接数据库连接池的连接的最大空闲时间 -->
+		<property name="maxIdleTime" value="20"/>
+	</bean>
+
+	<!-- 定义Hibernate的SessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 依赖注入数据源，注入正是上面定义的dataSource -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- mappingResouces属性用来列出全部映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<!-- 以下用来列出Hibernate映射文件 -->
+				<value>booking/po/Field.hbm.xml</value>
+				<value>booking/po/Booking.hbm.xml</value>
+				<value>booking/po/Disable.hbm.xml</value>
+				<value>booking/po/Timeitem.hbm.xml</value>
+				<value>booking/po/User.hbm.xml</value>				
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<!-- 指定数据库方言 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<!-- 是否根据需要每次自动创建数据库 -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- 显示Hibernate持久化操作所生成的SQL -->
+				<prop key="hibernate.show_sql">false</prop>
+				<!-- 将SQL脚本进行格式化后再输出 -->
+				<prop key="hibernate.format_sql">true</prop>
+				<!-- 关闭SessionFactory的二级缓存 
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				-->
+			</props>
+		</property>
+	</bean>
+
+	<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 -->
+	<!-- 该类实现PlatformTransactionManager接口，是针对Hibernate的特定实现-->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<!-- 配置HibernateTransactionManager时需要依赖注入SessionFactory的引用 -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<!-- 配置事务切面Bean,指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 -->
+			<tx:method name="get*" read-only="true"/>
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<!-- 配置一个切入点，匹配指定包下所有以Impl结尾的类的所有方法的执行 -->
+		<aop:pointcut id="bnsPoint" expression="execution(* booking.business.impl.*Impl.*(..))"/>
+		<!-- 指定在bnsPoint切入点应用txAdvice事务切面 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="bnsPoint"/>
+	</aop:config>
+
+	<!-- 定义JavaMailSenderImpl，它用于发送邮件 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<!-- 指定发送邮件的SMTP服务器地址 -->
+		<property name="host" value="smtp.aliyun.com"/>	<!-- 需要更改的地方3/7：value请改为自己的smtp网址，例如smtp.aliyun.com -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.timeout">60000</prop>
+			</props>
+		</property>
+		<!-- 指定登录邮箱的用户名、密码 -->
+		<property name="username" value="user@aliyun.com"/> <!-- 需要更改的地方4/7：value请改为自己的邮箱地址 -->
+		<property name="password" value="pswd"/> <!-- 需要更改的地方5/7：value请改为自己的邮箱密码 -->
+	</bean>
+	
+	<!-- 定义SimpleMailMessage Bean，它代表了一份邮件 -->
+	<bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="user@aliyun.com"/> <!-- 需要更改的地方6/7：value请改为自己的邮箱地址，需同上 -->
+		<!-- 指定邮件标题 -->
+		<property name="subject" value="预订系统验证码"/> <!-- 需要更改的地方7/7：value可改为自己的 -->
+	</bean>
+	
+	<!-- 配置业务逻辑组件 -->
+	<bean id="bookbns" class="booking.business.impl.BookBusinessImpl">
+		<!-- 为业务逻辑组件注入所需的DAO组件 -->
+		<property name="fieldDao" ref="fieldDao"/>
+		<property name="timeitemDao" ref="timeitemDao"/>
+		<property name="bookingDao" ref="bookingDao"/>
+		<property name="disableDao" ref="disableDao"/>
+		<property name="userDao" ref="userDao"/>
+		<property name="mailSender" ref="mailSender"/>
+		<property name="message" ref="mailMessage"/>
+		
+	</bean>
+
+</beans>

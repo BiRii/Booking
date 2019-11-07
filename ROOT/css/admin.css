@@ -1,0 +1,89 @@
+body{margin:0; text-align:center; background:#333 0px 111px url(../image/bg_08.jpg); color:#FFF; font-family:微软雅黑;}
+
+div#topdiv{background-color:#FF4400; text-align:right; font-size:12px;}
+
+span.under{text-decoration:underline; cursor:pointer;}
+span.under:hover{background-color:#000;}
+
+div.one{height:54px; background-color:#FF4400; font-size:40px; letter-spacing:40px;}
+div.navigation{background-color:#373A3D;}
+
+div#showall h2{color:#000;}
+
+table#toptable{margin:0 auto; background-color:#373A3D; font-size:16px;}
+table#toptable td{padding:10px; cursor:pointer;}
+table#toptable td:hover{background-color:#FF4400;}
+table#toptable td.selected{background-color:#FF4400;}
+
+table#tbplayground, table#tbtimeitem, table#tbbookitem, table#tbuseritem, table#tbpauseitem{margin:0 auto; background-color:#FFF; color:#666;}
+tr.trcontent:hover{background-color:#EAEDF1;}
+tr.trbottom{background-color:#F5F6FA;}
+tr.slct{background-color:#EAEDF1;}
+th{color:#999; padding:10px 20px;}
+table#tbplayground td, table#tbtimeitem td, table#tbbookitem td, table#tbuseritem td, table#tbpauseitem td{border-top:1px solid #E1E6EB; padding:10px 20px;}
+td.number, table#tbplayground span, table#tbtimeitem span, table#tbbookitem span, table#tbuseritem span, table#tbpauseitem span{cursor:pointer;}
+td.newnumber{color:blue;}
+span.cl2, span.cl3, span.savealladdfield, span.discardalladdfield, span.savealladdtimeitem, span.discardalladdtimeitem{
+	font-weight:bold;
+	padding:0px 3px;
+	border:1px solid #FF4400;
+	border-radius:2px;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+span.cl2:hover, span.cl3:hover{background-color:#EAEDF1;}
+
+span.sp1, span.sp2{
+	margin:0px 2px;
+	padding:0px 10px;
+	border:1px solid #D8D8D8;
+	border-radius:2px;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+span#slctd, td#slctd2{background-color:#4F4F4F; color:#FFF;}
+
+div#turnpage{margin:0 auto; width:800px; color:#666; display:none;}
+
+table#turnto td{padding:5px; border:1px solid #F5F6FA; cursor:pointer;}
+
+table#tbplayground input.fieldinput, table#tbplayground select{font-family:微软雅黑;}
+table#tbplayground input.countinput, table#tbplayground input.daysinput, table#tbplayground input.admindaysinput, table#tbplayground input.countinputs, table#tbplayground input.daysinputs, table#tbplayground input.admindaysinputs{width:60px;}
+
+span.modify, span.resetpsw, span.delete, span.savemodify, span.discardmodify, span.addfield, span.addfields, span.saveaddfield, span.discardaddfield, span.saveaddtimeitem, span.discardaddtimeitem, span.addtimeitem, span.addtimeitems, span.addbookitem, span.addbookitems, span.adduseritem, span.adduseritems{
+	padding:0px 3px;
+	border:1px solid #FF4400;
+	border-radius:2px;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+
+#hint2{color:#F00;}
+
+#tbid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+#uid2,#pid2,#empuid,#verifyid{width:265px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+input#verifyid{width:140px;}
+input#verifybutton{width:120px; height:42px; border:1px solid #F08300; border-radius:3px; font-family:微软雅黑; cursor:pointer;}
+input#regsbid{width:287px; height:42px; border:1px solid #23AC38; border-radius:3px; background-color:#23AC38; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+
+/***************重置密码块*******************/
+div#resetpswdiv{border:10px solid #F44D35; border-top-width:40px; width:700px; height:370px; position:fixed; left:50%; top:50%; margin-left:-350px; margin-top:-250px; background-color:#FFF; display:none; z-index:1004;}
+
+#spanreset{float:left; position:relative; top:-30px; font-size:14px;}
+#spnresetcls{float:right; position:relative; top:-30px; font-size:14px; cursor:pointer;}
+#spnresetcls:hover{background-color:#F00;}
+
+#formresetpsw{margin-top:30px; color:#000;}
+
+#hint3{color:#F00;}
+
+#tbresetid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+#pid3{width:265px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+input#resetsbid{width:287px; height:42px; border:1px solid #F44D35; border-radius:3px; background-color:#F44D35; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+
+/***********************************/
+div#overlay{display:none; position:fixed; top:0%; left:0%; width:100%; height:100%; background-color:black; z-index:1001; -moz-opacity:0.3; opacity:0.30; filter:Alpha(opacity=30);}
+
+label.error{color:#F00;}

@@ -1,0 +1,73 @@
+body{text-align:center; margin:0; background:#1D1D1D url(../image/bg_08.jpg); color:#FFF; font-family:微软雅黑;}
+
+h1.hint1{color:#F00;}
+
+table.tbsite td, table.tbdate td, table#tbbooking td, table#turnto td{cursor:pointer;}
+
+div#topdiv{background-color:#00DD1B; text-align:right; font-size:12px;}
+
+span.under{text-decoration:underline; cursor:pointer;}
+span.under:hover{background-color:#000;}
+#returnhome{color:#F00;}
+
+div.one{height:100px; line-height:100px; background-color:#00DD1B; font-size:40px; letter-spacing:40px;}
+
+table.tbsite{margin:0 auto; font-size:18px;}
+table.tbsite td{padding:5px;}
+table.tbsite td[data-fieldstatus=unavailable]{background-color:#999999; cursor:auto;}
+table.tbsite td.selected{background-color:#000;}
+table.tbsite tr.trbgcolor0{background-color:#B3029B;}
+table.tbsite tr.trbgcolor1{background-color:#CD00CD;}
+table.tbsite tr.trbgcolor2{background-color:#1E90FF;}
+table.tbsite tr.trbgcolor3{background-color:#D24826;}
+table.tbsite tr.trbgcolor4{background-color:#F67700;}
+table.tbsite tr.trbgcolor5{background-color:#0F6D39;}
+table.tbsite tr.trbgcolor6{background-color:#2F4A81;}
+table.tbsite tr.trbgcolor7{background-color:#085C2B;}
+table.tbsite tr.trbgcolor8{background-color:#180153;}
+table.tbsite tr.trbgcolor9{background-color:#238D9A;}
+table.tbsite tr.trbgcolor10{background-color:#A04C1D;}
+table.tbsite tr.trbgcolor11{background-color:#047839;}
+table.tbsite tr.trbgcolor12{background-color:#F18700;}
+
+table.tbdate{margin:0 auto; font-size:15px;}
+table.tbdate td{width:89px; padding:2px 0px;}
+table.tbdate td[data-daystatus=unavailable]{background-color:#999999; cursor:auto;}
+table.tbdate td.selected{background-color:#000;}
+table.tbdate tr.DateTRcolor0{background-color:#008C00;}
+table.tbdate tr.DateTRcolor1{background-color:#AA73D1;}
+table.tbdate tr.DateTRcolor2{background-color:#8636B9;}
+table.tbdate tr.DateTRcolor3{background-color:#E21A1A;}
+table.tbdate tr.DateTRcolor4{background-color:#240040;}
+table.tbdate tr.DateTRcolor5{background-color:#013D01;}
+table.tbdate tr.DateTRcolor6{background-color:#F67700;}
+table.tbdate tr.DateTRcolor7{background-color:#FF9000;}
+table.tbdate tr.DateTRcolor8{background-color:#1F2B4B;}
+table.tbdate tr.DateTRcolor9{background-color:#A22101;}
+table.tbdate tr.DateTRcolor10{background-color:#23AC38;}
+table.tbdate tr.DateTRcolor11{background-color:#F9BE00;}
+table.tbdate tr.DateTRcolor12{background-color:#6F01C6;}
+table.tbdate tr.DateTRcolor13{background-color:#D8A33B;}
+
+table#tbbooking{margin:0 auto;}
+table#tbbooking tr{background-color:#70080F;}
+table#tbbooking th{background-color:#FF8D00; padding:5px;}
+table#tbbooking td.t1{background-color:#FF8D00; font-weight:bold;}
+table#tbbooking td.t2{background-color:#FF8D00; cursor:auto;}
+table#tbbooking td.cl{background-color:#4F4F4F; font-weight:bold;}
+table#tbbooking td{padding:5px 20px;}
+table#tbbooking td.slct{background-color:#000;}
+table#tbbooking span#slctd, td#slctd2{background-color:#000;}
+table#tbbooking span.sp1{cursor:pointer;}
+table#tbbooking span.sp1, table#tbbooking span.sp2{
+	margin:0px 2px;
+	padding:0px 10px;
+	border:1px solid #D8D8D8;
+	border-radius:2px;
+	-moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+
+div#turnpage{margin:0 auto; width:827px; display:none;}
+
+table#turnto td{padding:5px; border:1px solid #D8D8D8;}

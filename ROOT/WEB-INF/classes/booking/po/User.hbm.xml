@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="booking.po">
+	<class name="User" table="users">
+		<!-- 映射标识属性 -->
+		<id	name="id" type="long">
+			<!-- 指定主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="username" type="string" not-null="true" unique="true"/>
+		<property name="userpass" type="string" not-null="true"/>
+		<property name="email" type="string" not-null="true" unique="true"/>
+		<property name="errtime" type="int" not-null="true"/>
+		<property name="prerogative" type="int" not-null="true"/>
+		<property name="randomcode" type="string" not-null="true"/>
+		<property name="registertime" type="string" not-null="true"/>
+
+	</class>
+</hibernate-mapping>

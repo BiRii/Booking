@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Hibernate映射文件的根元素 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="booking.po">
+	<!-- 映射Person持久化类 -->
+	<class name="Field" table="field">
+		<!-- 映射标识属性 -->
+		<id name="id" type="long">
+			<!-- 指定identity的主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="name" type="string" not-null="true" unique="true"/>
+		<property name="count" type="int" not-null="true"/>
+		<property name="dayAmount" type="int" not-null="true"/>
+		<property name="dayAmountofadmin" type="int" not-null="true"/>
+		<property name="status" type="string" not-null="true"/>
+
+	</class>
+</hibernate-mapping>

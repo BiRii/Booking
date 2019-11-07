@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+
+	<package name="booking" extends="struts-default" namespace="/" >
+
+		<action name="" class="booking.action.IndexAction">
+			<result name="success">/WEB-INF/jsp/index.jsp</result>
+		</action>
+
+		<action name="cdyd" class="booking.action.IndexAction">
+			<result name="success">/WEB-INF/jsp/index.jsp</result>
+		</action>
+
+		<action name="processlogin" class="booking.action.LoginAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="processlogout" class="booking.action.LogoutAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+		
+		<action name="bk" class="booking.action.BookingAction">
+			<result name="success">/WEB-INF/jsp/success.jsp</result>
+		</action>
+
+		<action name="pausebooking" class="booking.action.PauseBookingAction">
+			<result name="success">/WEB-INF/jsp/pbrs.jsp</result>
+		</action>
+
+		<action name="processregister" class="booking.action.RegisterAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="getvercode" class="booking.action.GetVercodeAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="getmailcode" class="booking.action.GetMailcodeAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="validateusname" class="booking.action.ValidateUsnameAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="validatemailbox" class="booking.action.ValidateEmailAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="resetpsw" class="booking.action.ResetPswAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="retrievename" class="booking.action.RetrieveNameAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="mdfmail" class="booking.action.ModifyMailAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="querybooking" class="booking.action.QueryAction">
+			<result name="success">/WEB-INF/jsp/query.jsp</result>
+			<result name="error">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="cancelbooking" class="booking.action.CancelBookingAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="cancelbook" class="booking.action.CancelBookAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="cancelallbook" class="booking.action.CancelAllBookAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="myadmin" class="booking.action.AdminAction">
+			<result name="success">/WEB-INF/jsp/admin.jsp</result>
+			<result name="error">/WEB-INF/jsp/noadmin.jsp</result>
+		</action>
+
+		<action name="queryplayground" class="booking.action.QueryPlaygroundAction">
+			<result name="success">/WEB-INF/jsp/playground.jsp</result>
+			<result name="error">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="savemdfield" class="booking.action.SavemodifyFieldAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="discardmodify" class="booking.action.DiscardmodifyFieldAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="deletefield" class="booking.action.DeleteFieldAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delsltdfield" class="booking.action.DeleteFieldsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="deleteallfields" class="booking.action.DeleteAllFieldsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="saveaddfield" class="booking.action.SaveaddFieldAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="savealladdfield" class="booking.action.SaveAlladdFieldAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="querytimeitem" class="booking.action.QueryTimeItemAction">
+			<result name="success">/WEB-INF/jsp/timeitem.jsp</result>
+			<result name="error">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="savemdtime" class="booking.action.SavemodifyTimeAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="deletetimeitem" class="booking.action.DeleteTimeItemAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delsltdtime" class="booking.action.DeleteTimeItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="saveaddtimeitem" class="booking.action.SaveaddTimeItemAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="deletealltimeitems" class="booking.action.DeleteAllTimeItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="savealladdtimeitems" class="booking.action.SaveAlladdTimeItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="querybookitem" class="booking.action.QueryBookItemAction">
+			<result name="success">/WEB-INF/jsp/bookitem.jsp</result>
+			<result name="error">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delbookitems" class="booking.action.DeleteBookItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delallbookitems" class="booking.action.DeleteAllBookItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="queryuseritem" class="booking.action.QueryUserItemAction">
+			<result name="success">/WEB-INF/jsp/useritem.jsp</result>
+			<result name="error">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="deleteuseritems" class="booking.action.DeleteUserItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="savemdisadmin" class="booking.action.SavemodifyUserAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="getisadmin" class="booking.action.GetIsAdminAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delalluseritem" class="booking.action.DeleteAllUserItemAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="querypauseitem" class="booking.action.QueryPauseItemAction">
+			<result name="success">/WEB-INF/jsp/pauseitem.jsp</result>
+			<result name="error">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delpauseitems" class="booking.action.DeletePauseItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="delallpauseitems" class="booking.action.DeleteAllPauseItemsAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+		<action name="resetuspw" class="booking.action.ResetUserPswAction">
+			<result name="success">/WEB-INF/jsp/str.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

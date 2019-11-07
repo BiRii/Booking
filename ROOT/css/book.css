@@ -1,0 +1,185 @@
+/***************全局块*******************/
+body{text-align:center; margin:0; background:#1D1D1D center 113px repeat scroll url(../image/bg_02.jpg); color:#FFF; font-family:微软雅黑;}
+
+#hint1{color:#F00;}
+
+label.error{color:#F00;}
+td.lbl{text-align:right;}
+
+table.tbsite td, table.tbdate td, table.SiteTime td, table.SiteTime th, button{cursor:pointer;}
+/***************顶部块*******************/
+div#topdiv{background-color:#0C80E8; text-align:right; font-size:12px;}
+
+span.under{text-decoration:underline; cursor:pointer;}
+span.under:hover{background-color:#000;}
+#returnhome{color:#F00;}
+
+#lgspn,#regspn{font-size:12px; cursor:pointer;}
+#lgspn:hover,#regspn:hover{background-color:#333;}
+/***************登录块*******************/
+#logindiv{border:10px solid #BE8723; border-top-width:40px; width:600px; height:310px; position:fixed; left:50%; top:50%; margin-left:-300px; margin-top:-250px; background-color:#FFF; display:none; z-index:1002;}
+
+#spanlogin{float:left; position:relative; top:-30px; font-size:14px;}
+#spanclose{float:right; position:relative; top:-30px; font-size:14px; cursor:pointer;}
+#spanclose:hover{background-color:#F00;}
+
+#formlogin{margin-top:30px; color:#000;}
+
+#hint{color:#F00;}
+
+#tblogid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+input#uid,input#pid{width:250px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+
+input#lgsbid{width:270px; height:45px; border:1px solid #BE8723; border-radius:3px; background-color:#BE8723; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+/**************找回用户名块***************/
+div#retrievediv{border:10px solid #038890; border-top-width:40px; width:700px; height:310px; position:fixed; left:50%; top:50%; margin-left:-350px; margin-top:-250px; background-color:#FFF; display:none; z-index:1004;}
+
+#spanretrieve{float:left; position:relative; top:-30px; font-size:14px;}
+#spnretrievecls{float:right; position:relative; top:-30px; font-size:14px; cursor:pointer;}
+#spnretrievecls:hover{background-color:#F00;}
+
+#formretrieve{margin-top:30px; color:#000;}
+
+#hint4{color:#F00;}
+
+#tbretrieveid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+#empuid4,#verifyid4{width:265px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+input#verifyid4{width:140px;}
+input#verifybutton4{width:120px; height:42px; border:1px solid #F08300; border-radius:3px; font-family:微软雅黑; cursor:pointer;}
+input#retrievesbid{width:287px; height:42px; border:1px solid #038890; border-radius:3px; background-color:#038890; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+
+/***************注册块*******************/
+div#registerdiv{border:10px solid #23AC38; border-top-width:40px; width:700px; height:440px; position:fixed; left:50%; top:50%; margin-left:-350px; margin-top:-250px; background-color:#FFF; display:none; z-index:1004;}
+
+#spanreg{float:left; position:relative; top:-30px; font-size:14px;}
+#spnclose{float:right; position:relative; top:-30px; font-size:14px; cursor:pointer;}
+#spnclose:hover{background-color:#F00;}
+
+#formregister{margin-top:30px; color:#000;}
+
+#hint2{color:#F00;}
+
+#tbid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+#uid2,#pid2,#empuid,#verifyid{width:265px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+input#verifyid{width:140px;}
+input#verifybutton{width:120px; height:42px; border:1px solid #F08300; border-radius:3px; font-family:微软雅黑; cursor:pointer;}
+input#regsbid{width:287px; height:42px; border:1px solid #23AC38; border-radius:3px; background-color:#23AC38; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+/***************重置密码块*******************/
+div#resetpswdiv{border:10px solid #F44D35; border-top-width:40px; width:700px; height:370px; position:fixed; left:50%; top:50%; margin-left:-350px; margin-top:-250px; background-color:#FFF; display:none; z-index:1004;}
+
+#spanreset{float:left; position:relative; top:-30px; font-size:14px;}
+#spnresetcls{float:right; position:relative; top:-30px; font-size:14px; cursor:pointer;}
+#spnresetcls:hover{background-color:#F00;}
+
+#formresetpsw{margin-top:30px; color:#000;}
+
+#hint3{color:#F00;}
+
+#tbresetid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+#empuid3,#verifyid3,#pid3{width:265px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+input#verifyid3{width:140px;}
+input#verifybutton3{width:120px; height:42px; border:1px solid #F08300; border-radius:3px; font-family:微软雅黑; cursor:pointer;}
+input#resetsbid{width:287px; height:42px; border:1px solid #F44D35; border-radius:3px; background-color:#F44D35; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+/***************修改邮箱块****************/
+div#modifymaildiv{border:10px solid #E8D026; border-top-width:40px; width:700px; height:430px; position:fixed; left:50%; top:50%; margin-left:-350px; margin-top:-250px; background-color:#FFF; display:none; z-index:1004;}
+
+#spanmdfml{float:left; position:relative; top:-30px; font-size:14px;}
+#spnmdfmlcls{float:right; position:relative; top:-30px; font-size:14px; cursor:pointer;}
+#spnmdfmlcls:hover{background-color:#F00;}
+
+#formmdfml{margin-top:30px; color:#000;}
+
+#hint5{color:#F00;}
+
+#tbmdfmlid{text-align:left; border-collapse:separate; border-spacing:5px 20px; position:absolute; left:100px;}
+
+#empuid5,#verifyid5,#newmailid5,#verifyid6{width:265px; height:30px; padding:6px 10px; border:1px solid #CDCCCC; border-radius:3px; color:#333; font-size:20px; box-shadow:3px 3px 5px #F3F2F2 inset;}
+input#verifyid5,#verifyid6{width:140px;}
+input#verifybutton5,#verifybutton6{width:120px; height:42px; border:1px solid #F08300; border-radius:3px; font-family:微软雅黑; cursor:pointer;}
+input#mdfmlsbid{width:287px; height:42px; border:1px solid #E8D026; border-radius:3px; background-color:#E8D026; font-size:16px; color:#FFF; font-family:微软雅黑; cursor:pointer;}
+
+/*******************/
+div#overlay{display:none; position:fixed; top:0%; left:0%; width:100%; height:100%; background-color:black; z-index:1001; -moz-opacity:0.3; opacity:0.30; filter:Alpha(opacity=30);}
+
+div.one{height:100px; line-height:100px; background-color:#0C80E8; font-size:40px; letter-spacing:40px;}
+
+table.tbsite td:hover, table.tbdate td:hover, table.SiteTime th:hover, table.SiteTime td.t1:hover, table.SiteTime td:hover{background-color:#333;}
+
+table.tbsite{margin:0 auto; font-size:18px;}
+table.tbsite td{padding:5px;}
+table.tbsite td[data-fieldstatus=暂停预订]{background-color:#999999; cursor:auto;}
+table.tbsite td.selected{background-color:#000;}
+table.tbsite tr.trbgcolor0{background-color:#B3029B;}
+table.tbsite tr.trbgcolor1{background-color:#CD00CD;}
+table.tbsite tr.trbgcolor2{background-color:#1E90FF;}
+table.tbsite tr.trbgcolor3{background-color:#D24826;}
+table.tbsite tr.trbgcolor4{background-color:#F67700;}
+table.tbsite tr.trbgcolor5{background-color:#0F6D39;}
+table.tbsite tr.trbgcolor6{background-color:#2F4A81;}
+table.tbsite tr.trbgcolor7{background-color:#085C2B;}
+table.tbsite tr.trbgcolor8{background-color:#180153;}
+table.tbsite tr.trbgcolor9{background-color:#238D9A;}
+table.tbsite tr.trbgcolor10{background-color:#A04C1D;}
+table.tbsite tr.trbgcolor11{background-color:#047839;}
+table.tbsite tr.trbgcolor12{background-color:#F18700;}
+
+table.tbdate{margin:0 auto;}
+table.tbdate td{width:89px; padding:2px;}
+table.tbdate td[data-daystatus=unavailable]{background-color:#999999; cursor:auto;}
+table.tbdate td.selected{background-color:#000;}
+table.tbdate tr.DateTRcolor0{background-color:#008C00;}
+table.tbdate tr.DateTRcolor1{background-color:#AA73D1;}
+table.tbdate tr.DateTRcolor2{background-color:#8636B9;}
+table.tbdate tr.DateTRcolor3{background-color:#E21A1A;}
+table.tbdate tr.DateTRcolor4{background-color:#240040;}
+table.tbdate tr.DateTRcolor5{background-color:#013D01;}
+table.tbdate tr.DateTRcolor6{background-color:#F67700;}
+table.tbdate tr.DateTRcolor7{background-color:#FF9000;}
+table.tbdate tr.DateTRcolor8{background-color:#1F2B4B;}
+table.tbdate tr.DateTRcolor9{background-color:#A22101;}
+table.tbdate tr.DateTRcolor10{background-color:#23AC38;}
+table.tbdate tr.DateTRcolor11{background-color:#F9BE00;}
+table.tbdate tr.DateTRcolor12{background-color:#6F01C6;}
+table.tbdate tr.DateTRcolor13{background-color:#D8A33B;}
+
+table.SiteTime{margin:0 auto; font-size:12px;}
+table.SiteTime tr{background-color:#6BCB31;}
+table.SiteTime th{background-color:#5133AC;}
+table.SiteTime td.t1{background-color:#0F97F9; font-weight:bold;}
+table.SiteTime td[data-status=booked]{background-color:#EF236A; cursor:auto;}
+table.SiteTime td[data-status=disabled]{background-color:#999999; cursor:auto;}
+table.SiteTime td[data-status=paused]{background-color:#F00; cursor:auto;}
+table.SiteTime td[data-status=expired]{background-color:#7E735F; cursor:auto;}
+table.SiteTime td.selected{background-color:#000;}
+table.SiteTime td.t1.slct,table.SiteTime th.slct{background-color:#986700;}
+table.SiteTime td{padding:6px 2px;}
+/*模拟对角线*/
+div.out{
+	border-top:34px solid #5133AC;/*上边框宽度等于表格第一行行高*/
+	width:0px;/*让容器宽度为0*/
+	height:0px;/*让容器高度为0*/
+	border-left:64px solid #0F97F9;/*左边框宽度等于表格第一行第一格宽度*/
+	position:relative;/*让里面的两个子容器相对定位*/
+}
+b{display:block; position:absolute; top:-30px; left:-30px; width:35px;}
+em{font-style:normal; display:block; position:absolute; top:-15px; left:-64px; width:55x;}
+
+table.SiteTime th.slct div.out{border-top:34px solid #986700; border-left:64px solid #986700;}
+
+div#caution{border:10px solid #01D7CB; border-top-width:40px; position:fixed; left:25%; right:25%; top:30%; min-height:135px; background-color:#FFF; display:none; z-index:1003;}
+
+span#cauid{float:left; position:relative; top:-30px;}
+span#closeid{float:right; position:relative; top:-30px; cursor:pointer;}
+span#closeid:hover{background-color:#F00;}
+
+div#contentid{padding:10% 2px; color:#F00;}
+
+button#loginbt, button.sbt, button.pausebooking, button#login, button#register{width:100px; line-height:30px; border:1px solid #F08300; background-color:#E4393C; font-size:16px; color:#FFF; font-family:微软雅黑;}
+
+button.sbt, button.pausebooking{margin-bottom:80px;}
+
+button#register{background-color:#4F9924;}

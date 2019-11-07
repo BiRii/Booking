@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的DTD信息 -->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- 配置daoTemplate，作为所有DAO组件的模板 -->
+	<bean id="daoTemplate" abstract="true">
+		<!-- 为DAO组件注入SessionFactory引用(即实例) -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 配置fieldDao组件 -->
+	<bean id="fieldDao" parent="daoTemplate" class="booking.dao.impl.FieldDaoImpl"/>
+	<bean id="timeitemDao" parent="daoTemplate" class="booking.dao.impl.TimeitemDaoImpl"/>
+	<bean id="bookingDao" parent="daoTemplate" class="booking.dao.impl.BookingDaoImpl"/>
+	<bean id="disableDao" parent="daoTemplate" class="booking.dao.impl.DisableDaoImpl"/>
+	<bean id="userDao" parent="daoTemplate" class="booking.dao.impl.UserDaoImpl"/>
+
+</beans>
